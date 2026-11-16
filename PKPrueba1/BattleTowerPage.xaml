@@ -1,0 +1,117 @@
+﻿<!-- Pantalla de la Torre Batalla. -->
+<Page
+    x:Class="PKPrueba1.BattleTowerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="#111827">
+
+    <!-- Contenedor con tres filas: cabecera, contenido y botones. -->
+    <Grid Padding="28">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Cabecera: título, estado del combate y récord. -->
+        <StackPanel Grid.Row="0" Spacing="6">
+            <TextBlock
+                Text="TORRE BATALLA"
+                FontSize="36"
+                FontWeight="Bold"
+                Foreground="White"/>
+
+            <TextBlock
+                x:Name="StatusText"
+                FontSize="18"
+                Foreground="#F4B860"
+                TextWrapping="Wrap"/>
+
+            <TextBlock
+                x:Name="RecordText"
+                FontSize="14"
+                Foreground="#9DB4CC"/>
+        </StackPanel>
+
+        <!-- Zona con scroll: próximo rival y equipo. -->
+        <ScrollViewer Grid.Row="1" Margin="0,16,0,16">
+            <!-- Contenido apilado. -->
+            <StackPanel Spacing="16">
+
+                <!-- Texto del próximo rival o de las reglas del modo. -->
+                <TextBlock
+                    x:Name="OpponentText"
+                    FontSize="16"
+                    Foreground="#E2E8F0"
+                    TextWrapping="Wrap"/>
+
+                <!-- Título "Tu equipo". -->
+                <TextBlock
+                    x:Name="TeamTitleText"
+                    Text="Tu equipo"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Foreground="White"/>
+
+                <!-- Tarjetas de los Pokémon del equipo; se rellena desde el código. -->
+                <StackPanel x:Name="TeamPanel" Spacing="10"/>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Barra inferior de botones. -->
+        <StackPanel Grid.Row="2" Spacing="10">
+            <!-- Primera fila de botones: iniciar, combatir, objetos, equipar y primer Pokémon. -->
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button
+                    x:Name="StartButton"
+                    Content="INICIAR TORRE"
+                    Padding="18,10"
+                    Click="StartButton_Click"/>
+                <Button
+                    x:Name="FightButton"
+                    Content="COMBATIR"
+                    Padding="18,10"
+                    Click="FightButton_Click"/>
+                <Button
+                    x:Name="ItemButton"
+                    Content="USAR OBJETO"
+                    Padding="18,10"
+                    Click="ItemButton_Click"/>
+                <Button
+                    x:Name="EquipButton"
+                    Content="EQUIPAR"
+                    Padding="18,10"
+                    Click="EquipButton_Click"/>
+                <Button
+                    x:Name="LeadButton"
+                    Content="PRIMER POKÉMON"
+                    Padding="18,10"
+                    Click="LeadButton_Click"/>
+            </StackPanel>
+            <!-- Segunda fila de botones: enseñar movimiento, inventario, abandonar y menú. -->
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button
+                    x:Name="TutorButton"
+                    Content="Enseñar movimiento"
+                    Padding="18,10"
+                    Click="TutorButton_Click"/>
+                <Button
+                    x:Name="InventoryButton"
+                    Content="INVENTARIO"
+                    Padding="18,10"
+                    Click="InventoryButton_Click"/>
+                <Button
+                    x:Name="AbandonButton"
+                    Content="ABANDONAR"
+                    Padding="18,10"
+                    Click="AbandonButton_Click"/>
+                <Button
+                    x:Name="BackButton"
+                    Content="MENÚ"
+                    Padding="18,10"
+                    Click="Back_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

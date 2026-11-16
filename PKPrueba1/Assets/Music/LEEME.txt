@@ -1,0 +1,8 @@
+MÚSICA DEL JUEGO
+================
+Por defecto el juego reproduce la música desde YouTube con el reproductor incrustado oficial
+(hace falta conexión a internet y que el vídeo permita reproducirse incrustado).
+
+Si prefieres música local y sin conexión, copia aquí tus propios archivos de audio
+(.mp3, .wav, .m4a, .wma, .ogg o .flac). Si hay alguno, el juego los reproduce en bucle y de forma
+aleatoria en lugar de usar YouTube. Usa solo audio que tengas derecho a usar.

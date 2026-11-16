@@ -1,0 +1,110 @@
+<!-- Ranking global de la Torre Batalla y de Gimnasios. -->
+<Page
+    x:Class="PKPrueba1.RankingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Contenedor con tres filas: cabecera, listas y botón de volver. -->
+    <Grid Padding="28">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Cabecera: título y subtítulo. -->
+        <StackPanel Grid.Row="0" Spacing="6">
+            <TextBlock
+                Text="RANKING GLOBAL"
+                FontSize="36"
+                FontWeight="Bold"
+                Foreground="White"/>
+
+            <TextBlock
+                x:Name="SubtitleText"
+                FontSize="15"
+                Foreground="#9DB4CC"
+                TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <!-- Dos columnas: ranking de la torre (izquierda) y de gimnasios (derecha). -->
+        <Grid Grid.Row="1" ColumnSpacing="24" Margin="0,18,0,18">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Tarjeta del ranking de la Torre Batalla. -->
+            <Border
+                Grid.Column="0"
+                CornerRadius="16"
+                Background="#B0172033"
+                BorderBrush="#33FFFFFF"
+                BorderThickness="1"
+                Padding="18">
+                <Grid RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Spacing="2">
+                        <TextBlock
+                            Text="Torre Batalla"
+                            FontSize="24"
+                            FontWeight="Bold"
+                            Foreground="#F4B860"/>
+                        <TextBlock
+                            Text="Combates ganados seguidos"
+                            FontSize="13"
+                            Foreground="#9DB4CC"/>
+                    </StackPanel>
+
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="TowerList" Spacing="8"/>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <!-- Tarjeta del ranking de Gimnasios. -->
+            <Border
+                Grid.Column="1"
+                CornerRadius="16"
+                Background="#B0172033"
+                BorderBrush="#33FFFFFF"
+                BorderThickness="1"
+                Padding="18">
+                <Grid RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Spacing="2">
+                        <TextBlock
+                            Text="Gimnasios"
+                            FontSize="24"
+                            FontWeight="Bold"
+                            Foreground="#7DD3FC"/>
+                        <TextBlock
+                            x:Name="GymSubtitle"
+                            FontSize="13"
+                            Foreground="#9DB4CC"/>
+                    </StackPanel>
+
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="GymList" Spacing="8"/>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Botón para volver al menú. -->
+        <Button
+            x:Name="BackButton"
+            Grid.Row="2"
+            Content="Menú"
+            Padding="18,10"
+            Click="Back_Click"/>
+    </Grid>
+</Page>

@@ -1,0 +1,64 @@
+﻿<!-- Pantalla del inventario del jugador. -->
+<Page
+    x:Class="PKPrueba1.InventoryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="#07111C">
+
+    <!-- Contenedor con tres filas: cabecera, lista y botón de volver. -->
+    <Grid Padding="35">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Cabecera: título y subtítulo. -->
+        <StackPanel Grid.Row="0">
+            <TextBlock
+                Text="INVENTARIO"
+                FontSize="38"
+                FontWeight="Bold"
+                Foreground="White"/>
+
+            <TextBlock
+                Text="Objetos obtenidos durante tu aventura"
+                Margin="0,5,0,20"
+                Foreground="#9FB2C8"/>
+        </StackPanel>
+
+        <!-- Zona con scroll para la lista de objetos. -->
+        <ScrollViewer Grid.Row="1">
+
+            <!-- Lista de tarjetas de objetos; se rellena desde el código. -->
+            <ItemsControl x:Name="InventoryList">
+
+                <ItemsControl.ItemsPanel>
+
+                    <ItemsPanelTemplate>
+
+                        <WrapGrid
+                            MaximumRowsOrColumns="3"
+                            HorizontalAlignment="Center"/>
+
+                    </ItemsPanelTemplate>
+
+                </ItemsControl.ItemsPanel>
+
+            </ItemsControl>
+
+        </ScrollViewer>
+
+        <!-- Botón para volver. -->
+        <Button
+            Grid.Row="2"
+            Content="Regresar"
+            HorizontalAlignment="Left"
+            Padding="20,10"
+            Margin="0,20,0,0"
+            Click="BackButton_Click"/>
+
+    </Grid>
+
+</Page>

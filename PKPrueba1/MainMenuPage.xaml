@@ -1,0 +1,91 @@
+﻿<!-- Menú principal: acceso a Torre Batalla, Gimnasios, Ranking, música y cierre de sesión. -->
+<Page
+    x:Class="PKPrueba1.MainMenuPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Contenedor de la página. -->
+    <Grid>
+
+        <!-- Columna centrada con el título y los botones del menú. -->
+        <StackPanel
+            Width="520"
+            Spacing="18"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+
+            <!-- Título del juego. -->
+            <TextBlock
+                Text="POKÉMON ADVENTURE"
+                FontSize="42"
+                FontWeight="Bold"
+                Foreground="White"
+                HorizontalAlignment="Center"/>
+
+            <!-- Saludo con el nombre del usuario (se rellena desde el código). -->
+            <TextBlock
+                x:Name="WelcomeText"
+                FontSize="18"
+                Foreground="#9DB4CC"
+                HorizontalAlignment="Center"
+                Margin="0,0,0,12"/>
+
+            <!-- Botón de la Torre Batalla. -->
+            <Button
+                x:Name="TowerButton"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Left"
+                Padding="22,16"
+                Click="BattleTower_Click"></Button>
+
+            <!-- Botón del modo Gimnasios. -->
+            <Button
+                x:Name="GymsButton"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Left"
+                Padding="22,16"
+                Click="Gyms_Click"></Button>
+
+            <!-- Botón del Ranking global. -->
+            <Button
+                x:Name="RankingButton"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Left"
+                Padding="22,14"
+                Click="Ranking_Click"/>
+
+            <!-- Botón para cerrar sesión y volver al login. -->
+            <Button
+                x:Name="ExitButton"
+                Content="Cerrar sesión"
+                HorizontalAlignment="Stretch"
+                Padding="12"
+                Click="Exit_Click"/>
+
+            <!-- Botón para activar o desactivar la música. -->
+            <Button
+                x:Name="MusicButton"
+                HorizontalAlignment="Stretch"
+                Padding="12"
+                Click="Music_Click"/>
+
+            <!-- Botón para cerrar el juego. -->
+            <Button
+                x:Name="QuitButton"
+                Content="Cerrar juego"
+                HorizontalAlignment="Stretch"
+                Padding="12"
+                Click="Quit_Click"/>
+
+            <!-- Nota con el atajo de pantalla completa. -->
+            <TextBlock
+                Text="F11: pantalla completa / ventana"
+                Foreground="#64748B"
+                FontSize="12"
+                HorizontalAlignment="Center"/>
+
+        </StackPanel>
+
+    </Grid>
+
+</Page>

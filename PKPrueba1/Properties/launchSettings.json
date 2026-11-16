@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PKPrueba1 (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PKPrueba1 (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
